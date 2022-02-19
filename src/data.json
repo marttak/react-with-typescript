@@ -1,0 +1,12 @@
+[
+    {
+        "fname": "Frodo",
+        "lname": "Baggins",
+        "age": 51
+    },
+    {
+        "fname": "Gandalf",
+        "lname": "The Gray",
+        "age": 24000
+    }
+]
