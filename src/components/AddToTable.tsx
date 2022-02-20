@@ -48,11 +48,11 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
     }
 
     return (
-        <div className="AddToList">
+        <div className="AddToTable">
             <input
                 type="text"
                 placeholder="First name"
-                className="AddToList-input"
+                className="AddToTable-input"
                 value={input.fname}
                 onChange={handleChange}
                 name="fname"
@@ -60,7 +60,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
             <input
                 type="text"
                 placeholder="Last name"
-                className="AddToList-input"
+                className="AddToTable-input"
                 value={input.lname}
                 onChange={handleChange}
                 name="lname"
@@ -68,13 +68,13 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
             <input
                 type="text"
                 placeholder="Age"
-                className="AddToList-input"
+                className="AddToTable-input"
                 value={input.age}
                 onChange={handleChange}
                 name="age"
             />
             <button
-                className="AddToList-btn"
+                className="AddToTable-btn"
                 onClick={handleClick}
             >
                 Submit

@@ -1,7 +1,7 @@
 import { MouseEventHandler, useCallback, useState } from "react";
-import data from "../data.json"
+import people from "../data.json"
 
-type Data = typeof data
+type Data = typeof people
 
 type SortKeys = keyof Data[0]
 
@@ -18,7 +18,7 @@ function sortData({
 }){
     if(!sortKey) return tableData;
 
-    const sortedData = data.sort((a, b) => {
+    const sortedData = tableData.sort((a, b) => {
         return a[sortKey] > b[sortKey] ? 1 : -1
     })
 
@@ -40,14 +40,14 @@ function SortButton({sortOrder, columnKey, sortKey, onClick}:
     columnKey && sortOrder === 'desc' ? 'sort-button sort-reverse' : 'sort-button'}`}>△</button>;
 }
 
-function SortableTable({ data }:{data: Data}){
+function SortableTable({ people }:{people: Data}){
 
     const [sortKey, setSortKey] = useState<SortKeys>('fname')
     const [sortOrder, setSortOrder] = useState<SortOrder>('ascn')
 
     const sortedData = useCallback(
-        () => sortData({tableData: data, sortKey, reverse: sortOrder === 'desc'}), 
-        [data, sortKey, sortOrder]
+        () => sortData({tableData: people, sortKey, reverse: sortOrder === 'desc'}), 
+        [people, sortKey, sortOrder]
     );
 
     function changeSort(key: SortKeys){

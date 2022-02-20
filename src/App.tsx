@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import List from "./components/List"
 import AddToTable from './components/AddToTable';
 import SortableTable from './components/SortableTable';
 
@@ -17,21 +15,21 @@ function App() {
 
   const [people, setPeople] = useState<IState["people"]>([
     {
-      fname: "Frodo",
-      lname: "Baggins",
-      age: 51
-    },
-    {
       fname: "Gandalf",
       lname: "The Gray",
       age: 24000
     },
+    {
+      fname: "Frodo",
+      lname: "Baggins",
+      age: 51
+    }
   ])
 
   return (
     <div className="App">
       <h1>The Fellowship</h1>
-        <SortableTable data = {people}/>
+        <SortableTable people = {people}/>
         <AddToTable people = {people} setPeople={setPeople}/>
     </div>
   );
